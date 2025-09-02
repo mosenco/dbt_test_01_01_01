@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: branded_products
+    description: prodotti venduti da branded partners
+    columns:
+      - name: restaurant_name
+        description: il nome del partner
+        data_tests:
+          - not_null
+      - name: product_name
+        description: il nome del prodotto
+        data_tests:
+          - not_null
+      - name: net_amount
+        description: quanto costa il prodotto
+        data_tests:
+          - not_null
+
+  - name: stg_chain_partners
+    description: da it_dwh_partner si filtra solo per i branded
+    columns:
+      - name: restaurant_id_local
+        description: id univoco locale per l'italia che identifica il ristorante
+        data_tests:
+          - not_null
+          - unique
+      - name: group_restaurant_id
+        description: id univoco usato dal gruppo/fuori italia per identificare il ristorante
+        data_tests:
+          - not_null
+          - unique
+      - name: restaurant_name
+        description: il nome del ristorante
+        data_tests:
+          - not_null
+      - name: partner_type
+        description: che tipo è il partner(figo?)
+        data_tests:
+          - not_null
+      - name: partner_category
+        description: categoria a cui appartiene il partner
+        data_tests:
+          - not_null
+
+
+
+
+
+
